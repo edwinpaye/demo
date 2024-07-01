@@ -1,0 +1,15 @@
+<!-- sidebar.component.html -->
+<button (click)="toggleSidebar()">open sidebar</button>
+<div class="sidebar" [class.expanded]="isOpen">
+    <div class="sidebar-header">
+      <h2>Menu</h2>
+      <button class="toggle-btn" (click)="closeSidebar()">
+        <i class="fas fa-bars">X</i>
+      </button>
+    </div>
+    <ul class="sidebar-nav">
+      <li *ngFor="let item of menuItems">
+        <a [routerLink]="[item.path]">{{ item.label }}</a>
+      </li>
+    </ul>
+</div>
